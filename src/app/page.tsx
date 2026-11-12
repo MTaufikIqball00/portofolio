@@ -1,3 +1,4 @@
+import { CertificationsSection } from "@/components/home/CertificationsSection";
 import { CompetencyOverview } from "@/components/home/CompetencyOverview";
 import { FeaturedProjects } from "@/components/home/FeaturedProjects";
 import { HeroSection } from "@/components/home/HeroSection";
@@ -17,6 +18,7 @@ export default async function HomePage() {
     <div className="space-y-4">
       <HeroSection publicReposCount={userProfile?.public_repos || 39} />
       <FeaturedProjects projects={projects} />
+      <CertificationsSection />
       <CompetencyOverview />
     </div>
   );
