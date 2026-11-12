@@ -5,6 +5,7 @@ import { Github } from "@/components/ui/GithubIcon";
 import { siteConfig } from "@/config/site";
 import {
   ArrowRight,
+  Award,
   Briefcase,
   GraduationCap,
   Mail,
@@ -66,17 +67,17 @@ export function HeroSection({ publicReposCount = 39 }: HeroSectionProps) {
               </p>
 
               <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
-                Software engineer dengan fokus utama pada arsitektur sistem cerdas berbasis bukti nyata, rekayasa backend berkinerja tinggi, dan robotika otonom. Berpengalaman di industri sebagai Full Stack Developer di <strong>Kemendikbud Bandung</strong> serta lulusan <strong>Universitas Komputer Indonesia (IPK 3.39)</strong> dengan tugas akhir sistem wahana drone otonom terpadu.
+                Software engineer dengan fokus utama pada arsitektur sistem cerdas berbasis bukti nyata, rekayasa backend berkinerja tinggi, dan robotika otonom. Berpengalaman di industri sebagai Full Stack Developer di <strong>Kemendikbud Bandung</strong>, lulusan <strong>Universitas Komputer Indonesia (IPK 3.39)</strong> dengan tugas akhir drone otonom, serta tersertifikasi <strong>Ilmuwan Data Madya (BNSP)</strong> &amp; kompetensi <strong>NVIDIA OpenUSD</strong>.
               </p>
             </div>
 
             {/* Formal Credential Pills */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
               <div className="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200/90 dark:border-white/[0.08] bg-slate-50/70 dark:bg-white/[0.02] text-xs font-mono text-slate-700 dark:text-slate-300">
                 <Briefcase className="w-4 h-4 text-sky-500 flex-shrink-0" />
                 <div className="flex flex-col">
-                  <span className="font-bold text-slate-900 dark:text-slate-100">Kemendikbud Bandung</span>
-                  <span className="text-[11px] text-slate-500">Full Stack Developer (2 Bulan)</span>
+                  <span className="font-bold text-slate-900 dark:text-slate-100">Kemendikbud</span>
+                  <span className="text-[11px] text-slate-500">Full Stack Developer</span>
                 </div>
               </div>
 
@@ -85,6 +86,14 @@ export function HeroSection({ publicReposCount = 39 }: HeroSectionProps) {
                 <div className="flex flex-col">
                   <span className="font-bold text-slate-900 dark:text-slate-100">UNIKOM • IPK 3.39</span>
                   <span className="text-[11px] text-slate-500">Tugas Akhir: Drone Otonom</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200/90 dark:border-white/[0.08] bg-slate-50/70 dark:bg-white/[0.02] text-xs font-mono text-slate-700 dark:text-slate-300">
+                <Award className="w-4 h-4 text-amber-500 flex-shrink-0" />
+                <div className="flex flex-col">
+                  <span className="font-bold text-slate-900 dark:text-slate-100">Sertifikasi BNSP & NVIDIA</span>
+                  <span className="text-[11px] text-slate-500">Data Scientist & OpenUSD</span>
                 </div>
               </div>
             </div>
@@ -180,6 +189,16 @@ export function HeroSection({ publicReposCount = 39 }: HeroSectionProps) {
                     Drone Otonom Pertanian
                   </span>
                 </div>
+
+                <div className="flex items-center justify-between p-2.5 rounded-lg bg-slate-100/70 dark:bg-white/[0.03] border border-slate-200/60 dark:border-white/[0.06]">
+                  <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                    <Award className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
+                    <span>Sertifikasi Profesi</span>
+                  </div>
+                  <span className="font-mono font-semibold text-slate-900 dark:text-slate-100">
+                    BNSP &amp; NVIDIA ({siteConfig.certificates.length} Lisensi)
+                  </span>
+                </div>
               </div>
 
               {/* Core Tech Tags */}
@@ -201,8 +220,8 @@ export function HeroSection({ publicReposCount = 39 }: HeroSectionProps) {
           </div>
         </div>
 
-        {/* Bottom 4-Column KPI / Metrics Strip */}
-        <div className="pt-8 border-t border-slate-200/80 dark:border-white/[0.08] grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
+        {/* Bottom 5-Column KPI / Metrics Strip */}
+        <div className="pt-8 border-t border-slate-200/80 dark:border-white/[0.08] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 text-left">
           <div className="space-y-1">
             <span className="text-2xl sm:text-3xl font-mono font-bold text-slate-900 dark:text-slate-100">
               3.39
@@ -217,6 +236,14 @@ export function HeroSection({ publicReposCount = 39 }: HeroSectionProps) {
             </span>
             <p className="text-xs font-semibold text-slate-700 dark:text-slate-300">Kemendikbud Bandung</p>
             <p className="text-[11px] text-slate-500 dark:text-slate-400">Full Stack Developer (LMS)</p>
+          </div>
+
+          <div className="space-y-1">
+            <span className="text-2xl sm:text-3xl font-mono font-bold text-slate-900 dark:text-slate-100">
+              {siteConfig.certificates.length}
+            </span>
+            <p className="text-xs font-semibold text-slate-700 dark:text-slate-300">Sertifikat Resmi</p>
+            <p className="text-[11px] text-slate-500 dark:text-slate-400">BNSP, NVIDIA &amp; Cisco</p>
           </div>
 
           <div className="space-y-1">

@@ -85,5 +85,14 @@ export function generatePersonJsonLd() {
       name: siteConfig.experience[0].company,
       alternateName: siteConfig.experience[0].companyFull,
     },
+    hasCredential: siteConfig.certificates.map((cert) => ({
+      "@type": "EducationalOccupationalCredential",
+      name: cert.title,
+      credentialCategory: cert.status,
+      recognizedBy: {
+        "@type": "Organization",
+        name: cert.issuer,
+      },
+    })),
   };
 }

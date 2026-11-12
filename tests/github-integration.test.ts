@@ -130,3 +130,34 @@ test("siteConfig and LMS contain verified work experience credentials", () => {
   );
 });
 
+test("siteConfig contains verified professional certificates (BNSP, NVIDIA, Cisco)", () => {
+  assert.ok(siteConfig.certificates.length >= 6);
+
+  // Assert BNSP certificate
+  const bnsp = siteConfig.certificates.find((c) => c.issuerCategory === "BNSP");
+  assert.ok(bnsp);
+  assert.strictEqual(bnsp.title, "Ilmuwan Data Madya (Associate Data Scientist)");
+  assert.strictEqual(bnsp.status, "KOMPETEN");
+  assert.strictEqual(bnsp.credentialId, "10895/SKHA/LSP-INF/08/2026");
+
+  // Assert NVIDIA certificates
+  const nvidiaCerts = siteConfig.certificates.filter((c) => c.issuerCategory === "NVIDIA");
+  assert.strictEqual(nvidiaCerts.length, 4);
+  for (const nc of nvidiaCerts) {
+    assert.ok(nc.title.includes("OpenUSD"));
+    assert.ok(nc.verificationUrl?.startsWith("https://learn.nvidia.com/certificates?id="));
+    assert.ok(nc.credentialId && nc.credentialId.length > 5);
+  }
+
+  // Assert Cisco certificate
+  const cisco = siteConfig.certificates.find((c) => c.issuerCategory === "Cisco");
+  assert.ok(cisco);
+  assert.strictEqual(cisco.title, "Introduction to Cybersecurity");
+
+  // Assert Person JSON-LD hasCredential
+  const jsonLd = generatePersonJsonLd();
+  assert.ok(Array.isArray(jsonLd.hasCredential));
+  assert.strictEqual(jsonLd.hasCredential.length, siteConfig.certificates.length);
+});
+
+

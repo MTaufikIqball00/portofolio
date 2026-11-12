@@ -9,7 +9,7 @@ const PILLARS = [
     icon: Bot,
     title: "Rekayasa AI & LLMOps",
     description:
-      "Mengembangkan platform GraphRAG sadar-struktur, graf pengetahuan properti, dan pipeline evaluasi model end-to-end memanfaatkan Ragas, TruLens, serta metrik halusinasi.",
+      "Tersertifikasi resmi Ilmuwan Data Madya (BNSP) & NVIDIA OpenUSD: Mengembangkan platform GraphRAG sadar-struktur, graf pengetahuan properti, dan pipeline evaluasi model end-to-end memanfaatkan Ragas, TruLens, serta metrik halusinasi.",
     verifiedProjects: [
       { name: "AutomatedGraph", slug: "automatedgraph" },
       { name: "LLMOps-Evaluasi-Model-End-To-End", slug: "llmops-evaluasi-model-end-to-end" },
