@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/Card";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { siteConfig } from "@/config/site";
-import { Award, Cpu, ExternalLink, ShieldCheck } from "lucide-react";
+import { Award, Cpu, ExternalLink, ShieldCheck, Sparkles } from "lucide-react";
 import React from "react";
 
 export function CertificationsSection() {
@@ -10,22 +10,27 @@ export function CertificationsSection() {
       <SectionHeader
         badge="Kredensial Resmi"
         title="Sertifikasi & Lisensi Profesional"
-        description="Sertifikasi kompetensi resmi terverifikasi dari Badan Nasional Sertifikasi Profesi (BNSP), NVIDIA, dan Cisco Networking Academy."
+        description="Sertifikasi kompetensi resmi terverifikasi dari Badan Nasional Sertifikasi Profesi (BNSP), Google for Education, NVIDIA, dan Cisco Networking Academy."
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {siteConfig.certificates.map((cert) => {
           const isBnsp = cert.issuerCategory === "BNSP";
+          const isGoogle = cert.issuerCategory === "Google";
           const isNvidia = cert.issuerCategory === "NVIDIA";
 
           const IconComponent = isBnsp
             ? Award
+            : isGoogle
+            ? Sparkles
             : isNvidia
             ? Cpu
             : ShieldCheck;
 
           const accentColorClass = isBnsp
             ? "bg-emerald-500/10 text-emerald-400"
+            : isGoogle
+            ? "bg-amber-500/10 text-amber-400"
             : isNvidia
             ? "bg-sky-500/10 text-sky-400"
             : "bg-indigo-500/10 text-indigo-400";

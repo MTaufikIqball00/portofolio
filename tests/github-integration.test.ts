@@ -130,8 +130,8 @@ test("siteConfig and LMS contain verified work experience credentials", () => {
   );
 });
 
-test("siteConfig contains verified professional certificates (BNSP, NVIDIA, Cisco)", () => {
-  assert.ok(siteConfig.certificates.length >= 6);
+test("siteConfig contains verified professional certificates (BNSP, Google, NVIDIA, Cisco)", () => {
+  assert.strictEqual(siteConfig.certificates.length, 8);
 
   // Assert BNSP certificate
   const bnsp = siteConfig.certificates.find((c) => c.issuerCategory === "BNSP");
@@ -139,6 +139,12 @@ test("siteConfig contains verified professional certificates (BNSP, NVIDIA, Cisc
   assert.strictEqual(bnsp.title, "Ilmuwan Data Madya (Associate Data Scientist)");
   assert.strictEqual(bnsp.status, "KOMPETEN");
   assert.strictEqual(bnsp.credentialId, "10895/SKHA/LSP-INF/08/2026");
+
+  // Assert Google certificate
+  const google = siteConfig.certificates.find((c) => c.issuerCategory === "Google");
+  assert.ok(google);
+  assert.strictEqual(google.title, "Gemini Certified Student");
+  assert.strictEqual(google.issuer, "Google for Education");
 
   // Assert NVIDIA certificates
   const nvidiaCerts = siteConfig.certificates.filter((c) => c.issuerCategory === "NVIDIA");
@@ -149,15 +155,22 @@ test("siteConfig contains verified professional certificates (BNSP, NVIDIA, Cisc
     assert.ok(nc.credentialId && nc.credentialId.length > 5);
   }
 
-  // Assert Cisco certificate
-  const cisco = siteConfig.certificates.find((c) => c.issuerCategory === "Cisco");
-  assert.ok(cisco);
-  assert.strictEqual(cisco.title, "Introduction to Cybersecurity");
+  // Assert Cisco certificates (2 certificates)
+  const ciscoCerts = siteConfig.certificates.filter((c) => c.issuerCategory === "Cisco");
+  assert.strictEqual(ciscoCerts.length, 2);
+  const cyber = ciscoCerts.find((c) => c.id === "cisco-cybersecurity");
+  assert.ok(cyber);
+  assert.strictEqual(cyber.title, "Introduction to Cybersecurity");
+
+  const ccna = ciscoCerts.find((c) => c.id === "cisco-ccna-networks");
+  assert.ok(ccna);
+  assert.strictEqual(ccna.title, "CCNAv7: Introduction to Networks");
+  assert.strictEqual(ccna.credentialId, "a30321c6-8c3f-4a13-9f50-5a2a9be0a3c9");
 
   // Assert Person JSON-LD hasCredential
   const jsonLd = generatePersonJsonLd();
   assert.ok(Array.isArray(jsonLd.hasCredential));
-  assert.strictEqual(jsonLd.hasCredential.length, siteConfig.certificates.length);
+  assert.strictEqual(jsonLd.hasCredential.length, 8);
 });
 
 

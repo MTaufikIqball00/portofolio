@@ -114,6 +114,19 @@ export const siteConfig = {
       skills: ["OpenUSD", "Model Kinds", "3D Hierarchy", "Scene Composition"],
     },
     {
+      id: "google-gemini-certified",
+      title: "Gemini Certified Student",
+      issuer: "Google for Education",
+      issuerCategory: "Google",
+      issuerLogo: "google",
+      issueDate: "27 Agustus 2026",
+      validThrough: "27 Agustus 2029",
+      status: "Certified",
+      description:
+        "Sertifikasi resmi Google for Education yang memvalidasi pengetahuan, kapabilitas terapan, dan kompetensi pemanfaatan generative AI Google (Gemini) untuk pemecahan masalah dan rekayasa cerdas.",
+      skills: ["Google AI", "Gemini", "Prompt Engineering", "Generative AI", "Applied AI"],
+    },
+    {
       id: "cisco-cybersecurity",
       title: "Introduction to Cybersecurity",
       issuer: "Cisco Networking Academy",
@@ -126,6 +139,20 @@ export const siteConfig = {
       description:
         "Sertifikat kelulusan resmi Cisco Networking Academy yang diselenggarakan melalui Universitas Komputer Indonesia (UNIKOM), memvalidasi fondasi keamanan jaringan, proteksi data, integritas informasi, dan pencegahan ancaman siber.",
       skills: ["Cybersecurity", "Network Security", "Data Privacy", "Threat Defense"],
+    },
+    {
+      id: "cisco-ccna-networks",
+      title: "CCNAv7: Introduction to Networks",
+      issuer: "Cisco Networking Academy",
+      issuerCategory: "Cisco",
+      issuerLogo: "cisco",
+      issueDate: "22 Februari 2024",
+      credentialId: "a30321c6-8c3f-4a13-9f50-5a2a9be0a3c9",
+      status: "Course Completion",
+      signee: "Lynn Bloomer (Director, Cisco Networking Academy)",
+      description:
+        "Sertifikasi kelulusan resmi Cisco Networking Academy dalam arsitektur protokol jaringan, model referensi OSI & TCP/IP, konfigurasi perangkat jaringan (switch & router), serta pengalamatan IPv4/IPv6.",
+      skills: ["CCNA", "Computer Networks", "TCP/IP", "Routing & Switching", "IPv4/IPv6"],
     },
   ],
   nav: [

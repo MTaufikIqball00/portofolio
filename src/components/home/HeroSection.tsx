@@ -67,7 +67,7 @@ export function HeroSection({ publicReposCount = 39 }: HeroSectionProps) {
               </p>
 
               <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
-                Software engineer dengan fokus utama pada arsitektur sistem cerdas berbasis bukti nyata, rekayasa backend berkinerja tinggi, dan robotika otonom. Berpengalaman di industri sebagai Full Stack Developer di <strong>Kemendikbud Bandung</strong>, lulusan <strong>Universitas Komputer Indonesia (IPK 3.39)</strong> dengan tugas akhir drone otonom, serta tersertifikasi <strong>Ilmuwan Data Madya (BNSP)</strong> &amp; kompetensi <strong>NVIDIA OpenUSD</strong>.
+                Software engineer dengan fokus utama pada arsitektur sistem cerdas berbasis bukti nyata, rekayasa backend berkinerja tinggi, dan robotika otonom. Berpengalaman di industri sebagai Full Stack Developer di <strong>Kemendikbud Bandung</strong>, lulusan <strong>Universitas Komputer Indonesia (IPK 3.39)</strong> dengan tugas akhir drone otonom, serta tersertifikasi <strong>Ilmuwan Data Madya (BNSP)</strong>, <strong>Google AI</strong>, &amp; <strong>NVIDIA OpenUSD</strong>.
               </p>
             </div>
 
@@ -92,8 +92,8 @@ export function HeroSection({ publicReposCount = 39 }: HeroSectionProps) {
               <div className="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200/90 dark:border-white/[0.08] bg-slate-50/70 dark:bg-white/[0.02] text-xs font-mono text-slate-700 dark:text-slate-300">
                 <Award className="w-4 h-4 text-amber-500 flex-shrink-0" />
                 <div className="flex flex-col">
-                  <span className="font-bold text-slate-900 dark:text-slate-100">Sertifikasi BNSP & NVIDIA</span>
-                  <span className="text-[11px] text-slate-500">Data Scientist & OpenUSD</span>
+                  <span className="font-bold text-slate-900 dark:text-slate-100">Sertifikasi Resmi</span>
+                  <span className="text-[11px] text-slate-500">BNSP, Google, NVIDIA, Cisco</span>
                 </div>
               </div>
             </div>
@@ -196,7 +196,7 @@ export function HeroSection({ publicReposCount = 39 }: HeroSectionProps) {
                     <span>Sertifikasi Profesi</span>
                   </div>
                   <span className="font-mono font-semibold text-slate-900 dark:text-slate-100">
-                    BNSP &amp; NVIDIA ({siteConfig.certificates.length} Lisensi)
+                    BNSP, Google &amp; NVIDIA ({siteConfig.certificates.length} Lisensi)
                   </span>
                 </div>
               </div>
@@ -243,7 +243,7 @@ export function HeroSection({ publicReposCount = 39 }: HeroSectionProps) {
               {siteConfig.certificates.length}
             </span>
             <p className="text-xs font-semibold text-slate-700 dark:text-slate-300">Sertifikat Resmi</p>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400">BNSP, NVIDIA &amp; Cisco</p>
+            <p className="text-[11px] text-slate-500 dark:text-slate-400">BNSP, Google, NVIDIA, Cisco</p>
           </div>
 
           <div className="space-y-1">
