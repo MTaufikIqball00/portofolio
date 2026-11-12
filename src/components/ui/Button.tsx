@@ -29,13 +29,13 @@ export function Button({
 
   const variantClasses = {
     primary:
-      "bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 shadow-sm",
+      "bg-white text-slate-950 hover:bg-slate-200 shadow-sm font-semibold",
     secondary:
-      "bg-slate-100 text-slate-800 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700/80 border border-slate-200 dark:border-white/10",
+      "bg-white/[0.06] text-slate-200 hover:bg-white/[0.1] border border-white/10",
     outline:
-      "bg-transparent text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/[0.05] border border-slate-300 dark:border-white/15",
+      "bg-transparent text-slate-300 hover:text-white hover:bg-white/[0.05] border border-white/15 hover:border-white/30",
     ghost:
-      "bg-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-white/[0.05]",
+      "bg-transparent text-slate-400 hover:text-white hover:bg-white/[0.05]",
   };
 
   const combinedClass = cn(

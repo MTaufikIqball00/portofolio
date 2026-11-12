@@ -1,6 +1,5 @@
 "use client";
 
-import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { siteConfig } from "@/config/site";
 import { Github } from "@/components/ui/GithubIcon";
 import { cn } from "@/lib/utils/cn";
@@ -34,7 +33,7 @@ export function Navbar() {
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
         scrolled
-          ? "bg-white/85 dark:bg-[#07090e]/85 backdrop-blur-md border-b border-slate-200/80 dark:border-white/[0.08] shadow-sm"
+          ? "bg-[#07090e]/85 backdrop-blur-md border-b border-white/[0.08] shadow-sm"
           : "bg-transparent border-b border-transparent"
       )}
     >
@@ -89,26 +88,24 @@ export function Navbar() {
           })}
         </nav>
 
-        {/* Right Action Utilities (GitHub link, Theme toggle, Mobile trigger) */}
+        {/* Right Action Utilities (GitHub link, Mobile trigger) */}
         <div className="flex items-center gap-2">
           <a
             href={siteConfig.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-xs font-mono px-3 py-1.5 rounded-lg border border-slate-300 dark:border-white/10 hover:border-slate-400 dark:hover:border-white/25 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+            className="flex items-center gap-2 text-xs font-mono px-3 py-1.5 rounded-lg border border-white/10 hover:border-white/25 bg-white/[0.03] text-slate-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
             aria-label="Profil GitHub"
           >
             <Github className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">GitHub</span>
           </a>
 
-          <ThemeToggle />
-
           {/* Mobile Menu Button */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden flex items-center justify-center w-9 h-9 rounded-lg border border-slate-300 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+            className="md:hidden flex items-center justify-center w-9 h-9 rounded-lg border border-white/10 bg-white/[0.03] text-slate-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
             aria-label={mobileMenuOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
             aria-expanded={mobileMenuOpen}
           >

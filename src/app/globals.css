@@ -3,34 +3,21 @@
 @layer base {
   :root {
     --bg-base: #07090e;
-    --bg-surface: #0d121d;
-    --bg-surface-elevated: #131a29;
+    --bg-surface: #0c1019;
+    --bg-surface-elevated: #111726;
     --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-accent: rgba(56, 189, 248, 0.3);
+    --border-accent: rgba(56, 189, 248, 0.35);
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
     --text-muted: #64748b;
     --accent: #38bdf8;
-    --accent-glow: rgba(56, 189, 248, 0.15);
-  }
-
-  html.light,
-  [data-theme="light"] {
-    --bg-base: #f8fafc;
-    --bg-surface: #ffffff;
-    --bg-surface-elevated: #f1f5f9;
-    --border-subtle: rgba(0, 0, 0, 0.08);
-    --border-accent: rgba(2, 132, 199, 0.4);
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --text-muted: #64748b;
-    --accent: #0284c7;
-    --accent-glow: rgba(2, 132, 199, 0.1);
+    --accent-glow: rgba(56, 189, 248, 0.12);
   }
 
   html {
-    color-scheme: dark light;
+    color-scheme: dark;
     scroll-behavior: smooth;
+    background-color: #07090e;
   }
 
   body {

@@ -8,20 +8,20 @@ export function Footer() {
   const currentYear = 2026;
 
   return (
-    <footer className="w-full border-t border-slate-200/80 dark:border-white/[0.08] bg-slate-50/50 dark:bg-[#07090e]/50 py-12 transition-colors">
+    <footer className="w-full border-t border-white/[0.08] bg-[#07090e]/80 py-12 transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           {/* Identity column */}
           <div className="sm:col-span-2 space-y-3">
             <div className="flex items-center gap-2">
-              <span className="w-6 h-6 rounded bg-slate-900 text-white dark:bg-white dark:text-slate-950 flex items-center justify-center font-mono font-bold text-[10px]">
+              <span className="w-6 h-6 rounded bg-white text-slate-950 flex items-center justify-center font-mono font-bold text-[10px]">
                 MT
               </span>
-              <span className="font-semibold text-slate-900 dark:text-slate-100 text-sm">
+              <span className="font-semibold text-slate-100 text-sm">
                 {siteConfig.fullName}
               </span>
             </div>
-            <p className="text-xs text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed">
+            <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
               {siteConfig.positioning}. Merekayasa arsitektur perangkat lunak yang tangguh pada ranah AI, robotika, dan sistem terdistribusi.
             </p>
 
@@ -29,7 +29,7 @@ export function Footer() {
             <div className="pt-2 flex items-center gap-2.5">
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="w-9 h-9 rounded-lg border border-slate-300 dark:border-white/10 hover:border-sky-500 dark:hover:border-sky-400 bg-white/70 dark:bg-white/[0.03] text-slate-700 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 flex items-center justify-center transition-all hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+                className="w-9 h-9 rounded-lg border border-white/10 hover:border-sky-400 bg-white/[0.03] text-slate-300 hover:text-sky-400 flex items-center justify-center transition-all hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
                 title={`Kirim Email (${siteConfig.email})`}
                 aria-label={`Kirim Email ke ${siteConfig.email}`}
               >
@@ -40,7 +40,7 @@ export function Footer() {
                 href={siteConfig.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg border border-slate-300 dark:border-white/10 hover:border-sky-500 dark:hover:border-sky-400 bg-white/70 dark:bg-white/[0.03] text-slate-700 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 flex items-center justify-center transition-all hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+                className="w-9 h-9 rounded-lg border border-white/10 hover:border-sky-400 bg-white/[0.03] text-slate-300 hover:text-sky-400 flex items-center justify-center transition-all hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
                 title={`Profil GitHub (@${siteConfig.githubUsername})`}
                 aria-label={`Profil GitHub @${siteConfig.githubUsername}`}
               >

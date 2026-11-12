@@ -22,10 +22,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#07090e" },
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-  ],
+  themeColor: "#07090e",
 };
 
 export default function RootLayout({
@@ -49,7 +46,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="min-h-screen flex flex-col antialiased selection:bg-sky-500/20 selection:text-sky-300"
+        className="min-h-screen flex flex-col antialiased bg-[#07090e] text-slate-100 selection:bg-sky-500/20 selection:text-sky-300"
         suppressHydrationWarning
       >
         <ThemeProvider>

@@ -46,7 +46,7 @@ const PILLARS = [
 
 export function CompetencyOverview() {
   return (
-    <section className="py-16 border-t border-slate-200/80 dark:border-white/[0.08]">
+    <section className="py-16 border-t border-white/[0.08]">
       <SectionHeader
         badge="Kapabilitas Inti"
         title="Fokus Rekayasa & Pilar Arsitektur"

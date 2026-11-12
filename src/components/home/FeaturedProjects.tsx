@@ -16,7 +16,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
   const featured = [...deployed, ...nonDeployed].slice(0, 3);
 
   return (
-    <section className="py-16 border-t border-slate-200/80 dark:border-white/[0.08]">
+    <section className="py-16 border-t border-white/[0.08]">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
         <SectionHeader
           badge="Live di Vercel"
