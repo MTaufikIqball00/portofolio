@@ -11,6 +11,16 @@ export const siteConfig = {
   avatarUrl: "https://avatars.githubusercontent.com/u/110665394?v=4",
   hireable: true,
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://taufik-portfolio.vercel.app",
+  education: {
+    institution: "Universitas Komputer Indonesia",
+    institutionShort: "UNIKOM",
+    thesis: "Autonomous Drone untuk Pemantauan Lahan Pertanian",
+    gpa: "3.39",
+    maxGpa: "4.00",
+    relatedProjectSlug: "harvest_drone",
+    description:
+      "Pendidikan terakhir diselesaikan di Universitas Komputer Indonesia (UNIKOM) dengan Indeks Prestasi Kumulatif (IPK) 3.39. Mengembangkan sistem Tugas Akhir berupa wahana UAV otonom terpadu (Harvest_Drone) yang mengintegrasikan ROS 2 Jazzy, PX4 Autopilot, sensor LiDAR 2D, dan visualisasi stasiun kendali darat untuk pemantauan lahan pertanian.",
+  },
   nav: [
     { label: "Beranda", href: "/" },
     { label: "Tentang", href: "/about" },

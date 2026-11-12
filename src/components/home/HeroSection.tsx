@@ -59,6 +59,9 @@ export function HeroSection({ publicReposCount = 39 }: HeroSectionProps) {
               <p className="text-xs font-medium text-sky-600 dark:text-sky-400">
                 {siteConfig.positioning}
               </p>
+              <p className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                {siteConfig.education.institutionShort} • IPK {siteConfig.education.gpa}
+              </p>
             </div>
           </div>
 
@@ -96,9 +99,9 @@ export function HeroSection({ publicReposCount = 39 }: HeroSectionProps) {
         <div className="pt-6 border-t border-slate-200/80 dark:border-white/[0.08] grid grid-cols-2 sm:grid-cols-4 gap-4 text-left">
           <div>
             <span className="text-xl sm:text-2xl font-mono font-bold text-slate-900 dark:text-slate-100">
-              6
+              {siteConfig.verifiedPinnedRepos.length}
             </span>
-            <p className="text-xs text-slate-500 dark:text-slate-400">Projek Pinned Utama</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">Projek Terverifikasi</p>
           </div>
           <div>
             <span className="text-xl sm:text-2xl font-mono font-bold text-slate-900 dark:text-slate-100">

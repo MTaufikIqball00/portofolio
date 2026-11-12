@@ -74,5 +74,10 @@ export function generatePersonJsonLd() {
     sameAs: [siteConfig.githubUrl],
     jobTitle: siteConfig.positioning,
     description: siteConfig.heroSubtext,
+    alumniOf: {
+      "@type": "EducationalOrganization",
+      name: siteConfig.education.institution,
+      alternateName: siteConfig.education.institutionShort,
+    },
   };
 }

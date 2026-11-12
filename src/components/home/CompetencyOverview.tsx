@@ -27,9 +27,9 @@ const PILLARS = [
   },
   {
     icon: GitBranch,
-    title: "Robotika Otonom & Simulasi",
+    title: "Robotika Otonom & Simulasi (Tugas Akhir)",
     description:
-      "Merekayasa sistem wahana udara otonom memadukan ROS 2 Jazzy, PX4 Autopilot, dunia simulasi fisika Gazebo Harmonic, penghindaran rintangan dinamis LiDAR, dan perencanaan jalur A*.",
+      "Riset & Tugas Akhir di Universitas Komputer Indonesia (IPK 3.39): Merekayasa sistem wahana udara otonom memadukan ROS 2 Jazzy, PX4 Autopilot, dunia simulasi fisika Gazebo Harmonic, penghindaran rintangan dinamis LiDAR, dan perencanaan jalur A*.",
     verifiedProjects: [{ name: "Harvest_Drone", slug: "harvest_drone" }],
   },
   {

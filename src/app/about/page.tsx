@@ -3,9 +3,9 @@ import { constructMetadata } from "@/lib/seo/metadata";
 import { Metadata } from "next";
 
 export const metadata: Metadata = constructMetadata({
-  title: "Tentang Saya & Prinsip Rekayasa",
+  title: "Tentang Saya & Pendidikan Terakhir",
   description:
-    "Latar belakang teknis, filosofi rekayasa perangkat lunak, dan ranah fokus aktif pada kecerdasan buatan, pemrograman sistem, dan robotika.",
+    "Latar belakang pendidikan di Universitas Komputer Indonesia (IPK 3.39) dengan tugas akhir autonomous drone pertanian, filosofi rekayasa perangkat lunak, dan ranah fokus teknis.",
   path: "/about",
 });
 

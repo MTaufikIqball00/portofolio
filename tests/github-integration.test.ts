@@ -77,11 +77,34 @@ test("constructMetadata generates valid Next.js Metadata with canonical URL", ()
   assert.ok(String(meta.alternates?.canonical).includes("/projects"));
 });
 
-test("generatePersonJsonLd contains valid schema.org Person definition", () => {
+test("generatePersonJsonLd contains valid schema.org Person definition with education background", () => {
   const jsonLd = generatePersonJsonLd();
   assert.strictEqual(jsonLd["@context"], "https://schema.org");
   assert.strictEqual(jsonLd["@type"], "Person");
   assert.strictEqual(jsonLd.name, siteConfig.fullName);
   assert.strictEqual(jsonLd.url, siteConfig.url);
   assert.ok(jsonLd.sameAs.includes(siteConfig.githubUrl));
+  assert.strictEqual(jsonLd.alumniOf?.name, "Universitas Komputer Indonesia");
 });
+
+test("siteConfig and Harvest_Drone contain verified education credentials", () => {
+  assert.strictEqual(siteConfig.education.institution, "Universitas Komputer Indonesia");
+  assert.strictEqual(siteConfig.education.gpa, "3.39");
+  assert.strictEqual(
+    siteConfig.education.thesis,
+    "Autonomous Drone untuk Pemantauan Lahan Pertanian"
+  );
+
+  const droneProject = VERIFIED_FALLBACK_PROJECTS.find(
+    (p) => p.slug === "harvest_drone"
+  );
+  assert.ok(droneProject);
+  assert.ok(droneProject.tagline.includes("Universitas Komputer Indonesia"));
+  assert.ok(droneProject.tagline.includes("3.39"));
+  assert.ok(
+    droneProject.highlights.some(
+      (h) => h.includes("Universitas Komputer Indonesia") && h.includes("3.39")
+    )
+  );
+});
+

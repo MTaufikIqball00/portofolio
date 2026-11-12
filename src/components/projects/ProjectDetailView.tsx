@@ -11,6 +11,7 @@ import {
   CheckCircle2,
   ExternalLink,
   GitFork,
+  GraduationCap,
   Layers,
   ShieldAlert,
   Sparkles,
@@ -67,6 +68,12 @@ export function ProjectDetailView({ project }: ProjectDetailViewProps) {
             <Badge variant="success" className="text-[11px] font-mono">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               <span>Live di Vercel</span>
+            </Badge>
+          )}
+          {project.slug === "harvest_drone" && (
+            <Badge variant="accent" className="text-[11px] font-mono bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/30">
+              <GraduationCap className="w-3.5 h-3.5 mr-1 inline" />
+              <span>Tugas Akhir — Universitas Komputer Indonesia (IPK 3.39)</span>
             </Badge>
           )}
         </div>

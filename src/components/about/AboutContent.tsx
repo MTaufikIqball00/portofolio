@@ -5,7 +5,10 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { siteConfig } from "@/config/site";
 import {
   ArrowRight,
+  Award,
   Brain,
+  FileText,
+  GraduationCap,
   Layers,
   ShieldCheck,
   Terminal,
@@ -40,23 +43,101 @@ export function AboutContent() {
             <p className="text-sm sm:text-base font-mono text-sky-600 dark:text-sky-400">
               {siteConfig.positioning}
             </p>
-            <p className="text-xs text-slate-500 dark:text-slate-400">
-              Profil GitHub:{" "}
-              <a
-                href={siteConfig.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-700 dark:text-slate-300 hover:underline"
-              >
-                @{siteConfig.githubUsername}
-              </a>
-            </p>
+            <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
+              <span className="flex items-center gap-1.5 font-mono text-slate-700 dark:text-slate-300">
+                <GraduationCap className="w-4 h-4 text-sky-500" />
+                <span>{siteConfig.education.institution} (IPK {siteConfig.education.gpa})</span>
+              </span>
+              <span>•</span>
+              <span>
+                Profil GitHub:{" "}
+                <a
+                  href={siteConfig.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-700 dark:text-slate-300 hover:underline"
+                >
+                  @{siteConfig.githubUsername}
+                </a>
+              </span>
+            </div>
           </div>
         </div>
 
         <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
           Saya adalah seorang software engineer yang berfokus membangun sistem cerdas berbasis bukti nyata (evidence-grounded). Rekayasa yang saya kembangkan mencakup persimpangan antara kecerdasan buatan terapan, rekayasa sistem berkinerja tinggi, dan robotika otonom. Saya memprioritaskan arsitektur perangkat lunak yang tangguh, evaluasi deterministik, dan keamanan tipe data end-to-end.
         </p>
+      </section>
+
+      {/* Education Background */}
+      <section className="space-y-6">
+        <SectionHeader
+          badge="Akademik"
+          title="Pendidikan Terakhir"
+          description="Latar belakang studi sarjana dan riset rekayasa tugas akhir berbasis wahana nirawak otonom."
+          className="mb-6"
+        />
+
+        <Card className="p-6 sm:p-8 border-sky-500/20 bg-gradient-to-br from-sky-500/[0.03] to-indigo-500/[0.02] space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200/80 dark:border-white/[0.08]">
+            <div className="flex items-start sm:items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center flex-shrink-0">
+                <GraduationCap className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+                    {siteConfig.education.institution}
+                  </h3>
+                  <Badge variant="accent">Pendidikan Terakhir</Badge>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-mono mt-0.5">
+                  {siteConfig.education.institutionShort}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 self-start sm:self-auto px-3.5 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-mono text-xs sm:text-sm font-semibold">
+              <Award className="w-4 h-4 text-emerald-500" />
+              <span>IPK: {siteConfig.education.gpa} / {siteConfig.education.maxGpa}</span>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <div className="space-y-1.5">
+              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-sky-600 dark:text-sky-400 flex items-center gap-1.5">
+                <FileText className="w-3.5 h-3.5" />
+                Tugas Akhir / Skripsi
+              </span>
+              <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100">
+                &ldquo;{siteConfig.education.thesis}&rdquo;
+              </h4>
+            </div>
+
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              {siteConfig.education.description}
+            </p>
+
+            <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex flex-wrap gap-2 text-xs font-mono text-slate-600 dark:text-slate-400">
+                <span className="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.05] border border-slate-200 dark:border-white/10">ROS 2 Jazzy</span>
+                <span className="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.05] border border-slate-200 dark:border-white/10">PX4 Autopilot</span>
+                <span className="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.05] border border-slate-200 dark:border-white/10">LiDAR 2D Obstacle Avoidance</span>
+                <span className="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.05] border border-slate-200 dark:border-white/10">Gazebo Harmonic</span>
+              </div>
+
+              <Button
+                href={`/projects/${siteConfig.education.relatedProjectSlug}`}
+                variant="outline"
+                size="sm"
+                className="text-xs whitespace-nowrap"
+              >
+                <span>Lihat Implementasi (Harvest_Drone)</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Button>
+            </div>
+          </div>
+        </Card>
       </section>
 
       {/* Engineering Philosophy */}

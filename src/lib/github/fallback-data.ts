@@ -347,10 +347,11 @@ export const VERIFIED_FALLBACK_PROJECTS: Project[] = [
   {
     slug: "harvest_drone",
     name: "Harvest_Drone",
-    displayName: "Harvest_Drone",
-    tagline: "Sistem Misi UAV Otonom untuk Pertanian Presisi berbasis ROS 2 Jazzy, PX4 & Gazebo",
+    displayName: "Harvest_Drone (Tugas Akhir)",
+    tagline:
+      "Tugas Akhir di Universitas Komputer Indonesia (IPK 3.39) — Sistem Misi UAV Otonom untuk Pertanian Presisi berbasis ROS 2 Jazzy, PX4 & Gazebo",
     description:
-      "Sistem kendali misi drone otonom terpadu untuk monitoring lahan pertanian. Mengintegrasikan ROS 2 Jazzy, PX4 Autopilot, dunia simulasi fisika Gazebo Harmonic 3D, sensor LiDAR 2D untuk penghindaran rintangan dinamis, dan dashboard Ground Control Station (GCS) berbasis Next.js 15.",
+      "Sistem kendali misi drone otonom terpadu untuk monitoring lahan pertanian yang dikembangkan sebagai penelitian Tugas Akhir sarjana di Universitas Komputer Indonesia (IPK 3.39). Mengintegrasikan ROS 2 Jazzy, PX4 Autopilot, dunia simulasi fisika Gazebo Harmonic 3D, sensor LiDAR 2D untuk penghindaran rintangan dinamis, dan dashboard Ground Control Station (GCS) berbasis Next.js 15.",
     htmlUrl: "https://github.com/MTaufikIqball00/Harvest_Drone",
     homepageUrl: null,
     language: "Python",
@@ -420,6 +421,7 @@ export const VERIFIED_FALLBACK_PROJECTS: Project[] = [
       "LiDAR 2D",
     ],
     highlights: [
+      "Projek Tugas Akhir (Skripsi) di Universitas Komputer Indonesia dengan perolehan IPK 3.39",
       "Survei waypoint otomatis dengan jangkauan presisi dan toleransi margin keamanan",
       "Penghindaran rintangan LiDAR dinamis dengan latensi responsif di bawah 50ms",
       "Stasiun kendali darat mandiri dengan dukungan peta offline untuk area perkebunan terpencil",
