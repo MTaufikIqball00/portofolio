@@ -5,13 +5,23 @@ import { getPinnedProjects, getProjectBySlug } from "../src/lib/github/client";
 import { VERIFIED_FALLBACK_PROJECTS } from "../src/lib/github/fallback-data";
 import { constructMetadata, generatePersonJsonLd } from "../src/lib/seo/metadata";
 
-test("VERIFIED_FALLBACK_PROJECTS contains exactly the 6 verified pinned repositories", () => {
-  assert.strictEqual(VERIFIED_FALLBACK_PROJECTS.length, 6);
+test("VERIFIED_FALLBACK_PROJECTS contains verified repositories and top 3 are deployed to Vercel", () => {
+  assert.strictEqual(VERIFIED_FALLBACK_PROJECTS.length, 7);
+
+  // Assert top 3 projects have active Vercel deployments
+  for (let i = 0; i < 3; i++) {
+    const p = VERIFIED_FALLBACK_PROJECTS[i];
+    assert.ok(
+      p.homepageUrl && p.homepageUrl.includes("vercel.app"),
+      `Top 3 project ${p.name} must have a live Vercel deployment URL`
+    );
+  }
 
   const expectedNames = [
     "AutomatedGraph",
-    "Medchain",
     "OmniMed-Insight",
+    "AI-Algorithmic-Trading-BESS-Arbitrage-Optimizer",
+    "Medchain",
     "LMS",
     "Harvest_Drone",
     "LLMOps-Evaluasi-Model-End-To-End",

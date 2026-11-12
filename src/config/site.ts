@@ -20,10 +20,11 @@ export const siteConfig = {
   ],
   verifiedPinnedRepos: [
     "AutomatedGraph",
-    "Medchain",
     "OmniMed-Insight",
-    "LMS",
+    "AI-Algorithmic-Trading-BESS-Arbitrage-Optimizer",
+    "Medchain",
     "Harvest_Drone",
     "LLMOps-Evaluasi-Model-End-To-End",
+    "LMS",
   ],
 };

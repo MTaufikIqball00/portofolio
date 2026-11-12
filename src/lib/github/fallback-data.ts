@@ -1,9 +1,9 @@
 import { Project } from "@/types/project";
 
 /**
- * Verified Fallback Snapshot of Taufik's 6 Actual GitHub Pinned Repositories.
- * All details are strictly grounded in repository code, commits, and documentation.
- * Zero fabrication policy: No made-up stats, fake clients, or unverified claims.
+ * Snapshot Terverifikasi Proyek Unggulan GitHub Taufik.
+ * Top 3 proyek adalah sistem yang telah di-deploy langsung ke Vercel (Live Demo aktif).
+ * Seluruh rincian diverifikasi langsung dari kode, arsitektur, dan commit repositori GitHub asli.
  */
 export const VERIFIED_FALLBACK_PROJECTS: Project[] = [
   {
@@ -14,7 +14,7 @@ export const VERIFIED_FALLBACK_PROJECTS: Project[] = [
     description:
       "Arsitektur GraphRAG sadar-struktur tingkat produksi yang mengintegrasikan ekstraksi graf pengetahuan properti (NetworkX, SQLite), retrieval hibrida (vektor dens + BM25), deteksi komunitas Louvain, dan sitasi inline bebas fabrikasi.",
     htmlUrl: "https://github.com/MTaufikIqball00/AutomatedGraph",
-    homepageUrl: null,
+    homepageUrl: "https://automated-graph.vercel.app",
     language: "Python",
     languageColor: "#3572A5",
     stars: 2,
@@ -30,6 +30,7 @@ export const VERIFIED_FALLBACK_PROJECTS: Project[] = [
       "multi-hop-qa",
       "rbac",
       "python",
+      "vercel",
     ],
     isArchived: false,
     isPinned: true,
@@ -37,8 +38,9 @@ export const VERIFIED_FALLBACK_PROJECTS: Project[] = [
     problemStatement:
       "Sistem RAG berbasis vektor murni sering mengalami fragmentasi konteks, ketidakmampuan menemukan hubungan kausalitas lintas dokumen terpisah, halusinasi relasi entitas, dan kegagalan dalam penalaran multi-hop kompleks.",
     solution:
-      "Mesin GraphRAG berbasis bukti nyata yang mengintegrasikan pemotongan dokumen sadar-struktur, ekstraksi entitas/relasi tervalidasi skema, graf properti ACID (NetworkX + SQLite), retrieval hibrida (vektor dens + BM25), deteksi komunitas Louvain, dan sitasi inline anti-fabrikasi.",
+      "Mesin GraphRAG berbasis bukti nyata yang mengintegrasikan pemotongan dokumen sadar-struktur, ekstraksi entitas/relasi tervalidasi skema, graf properti ACID (NetworkX + SQLite), retrieval hibrida (vektor dens + BM25), deteksi komunitas Louvain, dan sitasi inline anti-fabrikasi yang di-deploy ke Vercel.",
     keyFeatures: [
+      "Live deployment di Vercel dengan antarmuka eksplorasi GraphRAG interaktif",
       "Pemotong dokumen sadar-struktur dengan hierarki heading dan chunk hashing SHA-256",
       "Resolver entitas konservatif yang menangani alias, akronim, dan isolasi versi",
       "Penyimpanan graf properti ACID berbasis SQLite dan NetworkX",
@@ -80,13 +82,184 @@ export const VERIFIED_FALLBACK_PROJECTS: Project[] = [
       "NetworkX",
       "BM25",
       "Dense Vector Embeddings",
+      "Next.js / Vercel",
       "Tailwind CSS",
       "Pytest",
     ],
     highlights: [
+      "Live Demo aktif di Vercel: https://automated-graph.vercel.app",
       "100% verifikasi sitasi inline dengan mekanisme penolakan saat bukti tidak memadai",
       "Waktu pembuatan graf properti tervalidasi dalam hitungan milidetik via SQLite ACID",
       "Pencegahan IDOR dan isolasi multi-tenant tervalidasi penuh",
+    ],
+  },
+  {
+    slug: "omnimed-insight",
+    name: "OmniMed-Insight",
+    displayName: "OmniMed-Insight",
+    tagline: "Gateway Diagnostik AI Klinis Berkinerja Tinggi dengan Grad-CAM & Kepatuhan HL7 FHIR R4",
+    description:
+      "Platform diagnostik medis dwi-runtime tingkat produksi: gateway backend Rust (Axum, Tokio) dengan proteksi IDOR dan derivasi kunci Argon2id, dipadukan dengan modul visi PyTorch DenseNet121, visualisasi peta panas Grad-CAM, dan ekspor HL7 FHIR R4.",
+    htmlUrl: "https://github.com/MTaufikIqball00/OmniMed-Insight",
+    homepageUrl: "https://omnimed-insight-wheat.vercel.app/",
+    language: "Rust",
+    languageColor: "#dea584",
+    stars: 2,
+    forks: 0,
+    updatedAt: "2026-10-30T04:33:23Z",
+    createdAt: "2026-10-26T15:26:01Z",
+    topics: [
+      "rust",
+      "axum",
+      "tokio",
+      "pytorch",
+      "grad-cam",
+      "fhir",
+      "xai",
+      "medical-imaging",
+      "sqlite",
+      "vercel",
+    ],
+    isArchived: false,
+    isPinned: true,
+    category: "High-Performance Systems",
+    problemStatement:
+      "Sistem diagnostik AI konvensional seringkali berupa 'kotak hitam' (black box) tanpa transparansi visual, memiliki latensi API tinggi karena beban inferensi, dan tidak mematuhi standar interoperabilitas rumah sakit (HL7 FHIR R4).",
+    solution:
+      "Gateway dual-runtime menggabungkan Rust (Axum, Tokio) untuk konkurensi asinkron dan otentikasi memori-aman, dengan pipeline inferensi PyTorch DenseNet121 yang menghasilkan peta panas Grad-CAM real-time serta bundle data HL7 FHIR R4, di-deploy siap akses di Vercel.",
+    keyFeatures: [
+      "Live deployment di Vercel: antarmuka analisis diagnostik medis klinis interaktif",
+      "Gateway backend Rust (Axum) berlatensi sub-milidetik dengan isolasi konkurensi Tokio",
+      "Inferensi klasifikasi citra medis PyTorch DenseNet121 dengan visualisasi Grad-CAM",
+      "Kalkulasi metrik ketidakpastian (Shannon entropy) dan peta oklusi fitur",
+      "Ekspor bundle HL7 FHIR R4 (DiagnosticReport, Observation, ImagingStudy)",
+      "Penyimpanan SQLite tertanam dengan migrasi skema berbasis SQLx",
+      "Otentikasi keamanan tinggi dengan derivasi kunci Argon2id dan cookie HttpOnly",
+    ],
+    architecture: {
+      overview:
+        "Pemisahan batas tegas antara gateway backend Rust yang aman memori dengan modul pekerja inferensi deep learning Python.",
+      components: [
+        {
+          title: "1. Gateway Keamanan & API Rust",
+          description:
+            "Layanan Axum yang menangani verifikasi sesi Argon2id, pencegahan IDOR, dan routing asinkron berkecepatan tinggi.",
+        },
+        {
+          title: "2. Mesin Diagnostik Deep Learning",
+          description:
+            "Model DenseNet121 yang memproses tensor citra medis dan mengekstraksi aktivasi gradien lapisan konvolusi.",
+        },
+        {
+          title: "3. Pipeline Explainable AI (XAI)",
+          description:
+            "Generator peta panas Grad-CAM yang menyoroti area fokus patologis pada citra medis untuk verifikasi klinis.",
+        },
+        {
+          title: "4. Lapisan Interoperabilitas FHIR R4",
+          description:
+            "Pembuat bundle HL7 FHIR R4 yang mengekspor hasil diagnostik ke sistem rumah sakit secara terstandarisasi.",
+        },
+      ],
+    },
+    techStack: [
+      "Rust (Axum, Tokio, SQLx)",
+      "Python 3.11",
+      "PyTorch",
+      "DenseNet121",
+      "SQLite",
+      "Next.js / Vercel",
+      "HL7 FHIR R4",
+    ],
+    highlights: [
+      "Live Demo aktif di Vercel: https://omnimed-insight-wheat.vercel.app/",
+      "Waktu pengiriman data diagnostik sub-milidetik melalui arsitektur Rust Axum",
+      "Transparansi interpretasi visual Grad-CAM untuk membantu validasi dokter radiologi",
+      "Kepatuhan standar internasional HL7 FHIR R4 siap integrasi PACS/EHR",
+    ],
+  },
+  {
+    slug: "ai-algorithmic-trading-bess-arbitrage-optimizer",
+    name: "AI-Algorithmic-Trading-BESS-Arbitrage-Optimizer",
+    displayName: "AI Algorithmic Trading & BESS Optimizer",
+    tagline: "Platform Optimasi Arbitrase BESS Skala Industri dengan Inteligensi Surya (Solar PV) & RL",
+    description:
+      "Platform terintegrasi skala industri untuk Optimasi Arbitrase & Algorithmic Trading Battery Energy Storage System (BESS) serta Modul Data Science Surya (Solar PV) Intelligence, Predictive Maintenance, dan Co-Located Hybrid Dispatch pada pasar listrik grosir (CAISO, ERCOT, ENTSO-E).",
+    htmlUrl: "https://github.com/MTaufikIqball00/AI-Algorithmic-Trading-BESS-Arbitrage-Optimizer",
+    homepageUrl: "https://ai-algorithmic-trading-bess-arbitra.vercel.app",
+    language: "Python",
+    languageColor: "#3572A5",
+    stars: 2,
+    forks: 0,
+    updatedAt: "2026-11-12T02:50:16Z",
+    createdAt: "2026-10-29T15:39:36Z",
+    topics: [
+      "algorithmic-trading",
+      "bess",
+      "battery-storage",
+      "energy-arbitrage",
+      "solar-pv",
+      "reinforcement-learning",
+      "rust",
+      "axum",
+      "vercel",
+    ],
+    isArchived: false,
+    isPinned: true,
+    category: "AI & LLMOps",
+    problemStatement:
+      "Pasar listrik grosir modern ditandai oleh volatilitas harga ekstrem akibat penetrasi energi terbarukan (Duck Curve), lonjakan harga petang, dan tarif negatif. Operator sistem penyimpanan energi (BESS) menghadapi tantangan degradasi sel baterai elektrokimia nyata, estimasi State of Charge (SoC), serta kebutuhan peramalan daya surya dan eksekusi arbitrase real-time berlatensi rendah.",
+    solution:
+      "Platform terintegrasi yang menggabungkan pemodelan fisika elektrokimia baterai (SoC, DoD, batasan termal), peramalan daya surya & harga listrik via machine learning (XGBoost & LightGBM), optimasi dispatch berbasis Reinforcement Learning (PPO), mesin backtesting deterministik cepat, backend Rust Axum, dan terminal perdagangan web interaktif yang di-deploy ke Vercel.",
+    keyFeatures: [
+      "Live deployment di Vercel: Terminal perdagangan web interaktif dengan live charting siap produksi",
+      "Peramalan daya surya & harga listrik grosir dengan ensemble LightGBM & XGBoost",
+      "Optimasi dispatch arbitrase baterai (BESS) menggunakan Reinforcement Learning (PPO)",
+      "Pemodelan fisika degradasi baterai elektrokimia dan batasan termal IEC 61724",
+      "Mesin backtesting deterministik berkecepatan tinggi dengan simulasi pasar listrik nyata",
+      "Manajemen risiko pre-trade dan circuit breaker otomatis",
+    ],
+    architecture: {
+      overview:
+        "Arsitektur terdistribusi multi-layer memisahkan engine data science analitik, model inferensi Reinforcement Learning, backend gateway Rust Axum, dan frontend terminal trading interaktif.",
+      components: [
+        {
+          title: "1. Mesin Data Science & Peramalan (Python)",
+          description:
+            "Pipeline peramalan harga listrik pasar grosir dan estimasi output solar PV berbasis ensemble tree model (LightGBM/XGBoost).",
+        },
+        {
+          title: "2. Optimizer Arbitrase & Dispatch (RL/PPO)",
+          description:
+            "Kebijakan Reinforcement Learning Proximal Policy Optimization (PPO) yang memaksimalkan pendapatan arbitrase dengan memperhitungkan degradasi siklus baterai.",
+        },
+        {
+          title: "3. Gateway Backend & Eksekusi (Rust Axum)",
+          description:
+            "Layanan backend berkecepatan tinggi dalam Rust untuk manajemen risiko pre-trade, validasi order, dan streaming data pasar.",
+        },
+        {
+          title: "4. Terminal Trading Web (React 19 / Vercel)",
+          description:
+            "Antarmuka analitik dan kontrol dispatch real-time dengan grafik visualisasi pasar interaktif yang di-deploy di Vercel.",
+        },
+      ],
+    },
+    techStack: [
+      "Python 3.10+",
+      "Rust (Axum 0.7)",
+      "PyTorch",
+      "XGBoost",
+      "LightGBM",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "Vercel",
+    ],
+    highlights: [
+      "Live Demo aktif di Vercel: https://ai-algorithmic-trading-bess-arbitra.vercel.app",
+      "Pemodelan fisika sel baterai presisi tinggi memperhitungkan batasan degradasi dan SoC",
+      "Dukungan simulasi pasar grosir listrik (CAISO, ERCOT, ENTSO-E)",
     ],
   },
   {
@@ -169,168 +342,6 @@ export const VERIFIED_FALLBACK_PROJECTS: Project[] = [
       "Arsitektur zero-knowledge storage di mana server database tidak dapat membaca rekaman terenkripsi",
       "Kepatuhan regulasi rekam medis elektronik nasional (SATUSEHAT Kemenkes)",
       "Audit trail tamper-proof diuji pada jaringan konsorsium multi-node",
-    ],
-  },
-  {
-    slug: "omnimed-insight",
-    name: "OmniMed-Insight",
-    displayName: "OmniMed-Insight",
-    tagline: "Gateway Diagnostik AI Klinis Berkinerja Tinggi dengan Grad-CAM & Kepatuhan HL7 FHIR R4",
-    description:
-      "Platform diagnostik medis dwi-runtime tingkat produksi: gateway backend Rust (Axum, Tokio) dengan proteksi IDOR dan derivasi kunci Argon2id, dipadukan dengan modul visi PyTorch DenseNet121, visualisasi peta panas Grad-CAM, dan ekspor HL7 FHIR R4.",
-    htmlUrl: "https://github.com/MTaufikIqball00/OmniMed-Insight",
-    homepageUrl: null,
-    language: "Rust",
-    languageColor: "#dea584",
-    stars: 2,
-    forks: 0,
-    updatedAt: "2026-10-30T04:33:23Z",
-    createdAt: "2026-10-26T15:26:01Z",
-    topics: [
-      "rust",
-      "axum",
-      "tokio",
-      "pytorch",
-      "grad-cam",
-      "fhir",
-      "xai",
-      "medical-imaging",
-      "sqlite",
-    ],
-    isArchived: false,
-    isPinned: true,
-    category: "High-Performance Systems",
-    problemStatement:
-      "Sistem diagnostik AI konvensional seringkali berupa 'kotak hitam' (black box) tanpa transparansi visual, memiliki latensi API tinggi karena beban inferensi, dan tidak mematuhi standar interoperabilitas rumah sakit (HL7 FHIR R4).",
-    solution:
-      "Gateway dual-runtime menggabungkan Rust (Axum, Tokio) untuk konkurensi asinkron dan otentikasi memori-aman, dengan pipeline inferensi PyTorch DenseNet121 yang menghasilkan peta panas Grad-CAM real-time serta bundle data HL7 FHIR R4.",
-    keyFeatures: [
-      "Gateway backend Rust (Axum) berlatensi sub-milidetik dengan isolasi konkurensi Tokio",
-      "Inferensi klasifikasi citra medis PyTorch DenseNet121 dengan visualisasi Grad-CAM",
-      "Kalkulasi metrik ketidakpastian (Shannon entropy) dan peta oklusi fitur",
-      "Ekspor bundle HL7 FHIR R4 (DiagnosticReport, Observation, ImagingStudy)",
-      "Penyimpanan SQLite tertanam dengan migrasi skema berbasis SQLx",
-      "Otentikasi keamanan tinggi dengan derivasi kunci Argon2id dan cookie HttpOnly",
-    ],
-    architecture: {
-      overview:
-        "Pemisahan batas tegas antara gateway backend Rust yang aman memori dengan modul pekerja inferensi deep learning Python.",
-      components: [
-        {
-          title: "1. Gateway Keamanan & API Rust",
-          description:
-            "Layanan Axum yang menangani verifikasi sesi Argon2id, pencegahan IDOR, dan routing asinkron berkecepatan tinggi.",
-        },
-        {
-          title: "2. Mesin Diagnostik Deep Learning",
-          description:
-            "Model DenseNet121 yang memproses tensor citra medis dan mengekstraksi aktivasi gradien lapisan konvolusi.",
-        },
-        {
-          title: "3. Pipeline Explainable AI (XAI)",
-          description:
-            "Generator peta panas Grad-CAM yang menyoroti area fokus patologis pada citra medis untuk verifikasi klinis.",
-        },
-        {
-          title: "4. Lapisan Interoperabilitas FHIR R4",
-          description:
-            "Pembuat bundle HL7 FHIR R4 yang mengekspor hasil diagnostik ke sistem rumah sakit secara terstandarisasi.",
-        },
-      ],
-    },
-    techStack: [
-      "Rust (Axum, Tokio, SQLx)",
-      "Python 3.11",
-      "PyTorch",
-      "DenseNet121",
-      "SQLite",
-      "Next.js",
-      "HL7 FHIR R4",
-    ],
-    highlights: [
-      "Waktu pengiriman data diagnostik sub-milidetik melalui arsitektur Rust Axum",
-      "Transparansi interpretasi visual Grad-CAM untuk membantu validasi dokter radiologi",
-      "Kepatuhan standar internasional HL7 FHIR R4 siap integrasi PACS/EHR",
-    ],
-  },
-  {
-    slug: "lms",
-    name: "LMS",
-    displayName: "LMS",
-    tagline: "Learning Management System Enterprise dengan Profiling Mahasiswa (K-Means) & Multi-Tenansi",
-    description:
-      "Platform Learning Management System tingkat enterprise yang dibangun dengan Next.js 15, PostgreSQL, dan Supabase. Dilengkapi sistem peringatan dini berbasis clustering K-Means untuk memetakan keterlibatan mahasiswa, arsitektur multi-tenant, dan kuis interaktif.",
-    htmlUrl: "https://github.com/MTaufikIqball00/LMS",
-    homepageUrl: null,
-    language: "TypeScript",
-    languageColor: "#3178c6",
-    stars: 2,
-    forks: 0,
-    updatedAt: "2026-10-31T06:40:51Z",
-    createdAt: "2026-10-26T15:26:01Z",
-    topics: [
-      "nextjs",
-      "typescript",
-      "supabase",
-      "postgresql",
-      "kmeans",
-      "machine-learning",
-      "rbac",
-      "lms",
-    ],
-    isArchived: false,
-    isPinned: true,
-    category: "Enterprise Web & Healthcare",
-    problemStatement:
-      "Platform LMS standar seringkali tidak memiliki analitik prediktif untuk mendeteksi penurunan kinerja mahasiswa sejak dini, serta kesulitan mengelola ribuan pengguna dengan peran berbeda secara terisolasi.",
-    solution:
-      "Arsitektur LMS modern berbasis Next.js 15 dan Supabase PostgreSQL yang mengintegrasikan algoritma clustering K-Means untuk memetakan risiko akademik mahasiswa secara otomatis, didukung kontrol akses multi-tenant yang ketat.",
-    keyFeatures: [
-      "Sistem peringatan dini (early warning) mahasiswa berbasis algoritma clustering K-Means",
-      "Kontrol akses berbasis peran (RBAC) terperinci untuk Dosen, Mahasiswa, dan Administrator",
-      "Pelacakan kemajuan materi kursus, absensi terotomatisasi, dan sistem kuis interaktif",
-      "Penyimpanan berkas tugas terenkripsi dengan link unduhan bertanda tangan aman",
-      "Dashboard analitik performa kelas interaktif dengan visualisasi data real-time",
-    ],
-    architecture: {
-      overview:
-        "Arsitektur Next.js 15 App Router modern yang memanfaatkan Server Components untuk render cepat dan Supabase PostgreSQL untuk persistensi data relasional terisolasi.",
-      components: [
-        {
-          title: "1. Lapisan Presentasi & Server Components",
-          description:
-            "Halaman antarmuka Next.js 15 dengan optimasi streaming dan layout terisolasi berdasarkan peran pengguna.",
-        },
-        {
-          title: "2. Mesin Analisis K-Means (Python/API)",
-          description:
-            "Modul pemroses data yang menghitung metrik keaktifan, skor kuis, dan keterlambatan tugas ke dalam cluster risiko.",
-        },
-        {
-          title: "3. Basis Data & Row-Level Security",
-          description:
-            "PostgreSQL dengan kebijakan Row Level Security (RLS) guna mencegah kebocoran data antar kelas atau institusi.",
-        },
-        {
-          title: "4. Penyimpanan Media & Aset",
-          description:
-            "Bucket penyimpanan Supabase dengan URL berbatas waktu (signed URLs) untuk proteksi berkas tugas.",
-        },
-      ],
-    },
-    techStack: [
-      "Next.js 15",
-      "React 19",
-      "TypeScript",
-      "Tailwind CSS",
-      "PostgreSQL",
-      "Supabase",
-      "Scikit-Learn (K-Means)",
-    ],
-    highlights: [
-      "Clustering K-Means otomatis untuk mendeteksi mahasiswa yang membutuhkan intervensi akademik",
-      "Keamanan Row Level Security (RLS) PostgreSQL untuk isolasi hak akses data",
-      "Dukungan multi-peran dengan navigasi responsif dan ramah perangkat bergerak",
     ],
   },
   {
@@ -494,6 +505,86 @@ export const VERIFIED_FALLBACK_PROJECTS: Project[] = [
       "Pencegahan regresi model otomatis melalui quality gates terukur pada pipeline CI/CD",
       "Dukungan multi-model benchmarking untuk membandingkan efisiensi biaya dan akurasi",
       "Observabilitas performa latensi dan akurasi berbasis standar OpenMetrics",
+    ],
+  },
+  {
+    slug: "lms",
+    name: "LMS",
+    displayName: "LMS",
+    tagline: "Learning Management System Enterprise dengan Profiling Mahasiswa (K-Means) & Multi-Tenansi",
+    description:
+      "Platform Learning Management System tingkat enterprise yang dibangun dengan Next.js 15, PostgreSQL, dan Supabase. Dilengkapi sistem peringatan dini berbasis clustering K-Means untuk memetakan keterlibatan mahasiswa, arsitektur multi-tenant, dan kuis interaktif.",
+    htmlUrl: "https://github.com/MTaufikIqball00/LMS",
+    homepageUrl: null,
+    language: "TypeScript",
+    languageColor: "#3178c6",
+    stars: 2,
+    forks: 0,
+    updatedAt: "2026-10-31T06:40:51Z",
+    createdAt: "2026-10-26T15:26:01Z",
+    topics: [
+      "nextjs",
+      "typescript",
+      "supabase",
+      "postgresql",
+      "kmeans",
+      "machine-learning",
+      "rbac",
+      "lms",
+    ],
+    isArchived: false,
+    isPinned: true,
+    category: "Enterprise Web & Healthcare",
+    problemStatement:
+      "Platform LMS standar seringkali tidak memiliki analitik prediktif untuk mendeteksi penurunan kinerja mahasiswa sejak dini, serta kesulitan mengelola ribuan pengguna dengan peran berbeda secara terisolasi.",
+    solution:
+      "Arsitektur LMS modern berbasis Next.js 15 dan Supabase PostgreSQL yang mengintegrasikan algoritma clustering K-Means untuk memetakan risiko akademik mahasiswa secara otomatis, didukung kontrol akses multi-tenant yang ketat.",
+    keyFeatures: [
+      "Sistem peringatan dini (early warning) mahasiswa berbasis algoritma clustering K-Means",
+      "Kontrol akses berbasis peran (RBAC) terperinci untuk Dosen, Mahasiswa, dan Administrator",
+      "Pelacakan kemajuan materi kursus, absensi terotomatisasi, dan sistem kuis interaktif",
+      "Penyimpanan berkas tugas terenkripsi dengan link unduhan bertanda tangan aman",
+      "Dashboard analitik performa kelas interaktif dengan visualisasi data real-time",
+    ],
+    architecture: {
+      overview:
+        "Arsitektur Next.js 15 App Router modern yang memanfaatkan Server Components untuk render cepat dan Supabase PostgreSQL untuk persistensi data relasional terisolasi.",
+      components: [
+        {
+          title: "1. Lapisan Presentasi & Server Components",
+          description:
+            "Halaman antarmuka Next.js 15 dengan optimasi streaming dan layout terisolasi berdasarkan peran pengguna.",
+        },
+        {
+          title: "2. Mesin Analisis K-Means (Python/API)",
+          description:
+            "Modul pemroses data yang menghitung metrik keaktifan, skor kuis, dan keterlambatan tugas ke dalam cluster risiko.",
+        },
+        {
+          title: "3. Basis Data & Row-Level Security",
+          description:
+            "PostgreSQL dengan kebijakan Row Level Security (RLS) guna mencegah kebocoran data antar kelas atau institusi.",
+        },
+        {
+          title: "4. Penyimpanan Media & Aset",
+          description:
+            "Bucket penyimpanan Supabase dengan URL berbatas waktu (signed URLs) untuk proteksi berkas tugas.",
+        },
+      ],
+    },
+    techStack: [
+      "Next.js 15",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Supabase",
+      "Scikit-Learn (K-Means)",
+    ],
+    highlights: [
+      "Clustering K-Means otomatis untuk mendeteksi mahasiswa yang membutuhkan intervensi akademik",
+      "Keamanan Row Level Security (RLS) PostgreSQL untuk isolasi hak akses data",
+      "Dukungan multi-peran dengan navigasi responsif dan ramah perangkat bergerak",
     ],
   },
 ];

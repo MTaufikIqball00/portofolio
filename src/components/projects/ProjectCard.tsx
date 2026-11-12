@@ -29,9 +29,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
       <div className="space-y-4">
         {/* Top Meta: Category & Language */}
         <div className="flex items-center justify-between gap-2 flex-wrap">
-          <Badge variant="accent" className="text-[11px]">
-            {CATEGORY_LABELS[project.category] || project.category}
-          </Badge>
+          <div className="flex items-center gap-1.5 flex-wrap">
+            <Badge variant="accent" className="text-[11px]">
+              {CATEGORY_LABELS[project.category] || project.category}
+            </Badge>
+            {project.homepageUrl?.includes("vercel.app") && (
+              <Badge variant="success" className="text-[10px] py-0.5 px-2 font-mono">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span>Live Vercel</span>
+              </Badge>
+            )}
+          </div>
           <div className="flex items-center gap-1.5 text-xs font-mono text-slate-600 dark:text-slate-400">
             <span
               className="w-2 h-2 rounded-full inline-block"

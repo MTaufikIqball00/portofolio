@@ -63,6 +63,12 @@ export function ProjectDetailView({ project }: ProjectDetailViewProps) {
               Repositori Pinned
             </Badge>
           )}
+          {project.homepageUrl?.includes("vercel.app") && (
+            <Badge variant="success" className="text-[11px] font-mono">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span>Live di Vercel</span>
+            </Badge>
+          )}
         </div>
 
         <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">
