@@ -1,0 +1,228 @@
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/Card";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { siteConfig } from "@/config/site";
+import {
+  ArrowRight,
+  Brain,
+  Layers,
+  ShieldCheck,
+  Terminal,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+
+export function AboutContent() {
+  return (
+    <div className="max-w-4xl mx-auto space-y-16 pb-16">
+      {/* Intro Header */}
+      <section className="space-y-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+          <div className="relative w-24 h-24 rounded-2xl overflow-hidden border-2 border-slate-300 dark:border-white/20 shadow-md flex-shrink-0">
+            <Image
+              src={siteConfig.avatarUrl}
+              alt={siteConfig.fullName}
+              fill
+              sizes="96px"
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">
+                {siteConfig.fullName}
+              </h1>
+              <Badge variant="accent">AI & Perangkat Lunak</Badge>
+            </div>
+            <p className="text-sm sm:text-base font-mono text-sky-600 dark:text-sky-400">
+              {siteConfig.positioning}
+            </p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">
+              Profil GitHub:{" "}
+              <a
+                href={siteConfig.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-700 dark:text-slate-300 hover:underline"
+              >
+                @{siteConfig.githubUsername}
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+          Saya adalah seorang software engineer yang berfokus membangun sistem cerdas berbasis bukti nyata (evidence-grounded). Rekayasa yang saya kembangkan mencakup persimpangan antara kecerdasan buatan terapan, rekayasa sistem berkinerja tinggi, dan robotika otonom. Saya memprioritaskan arsitektur perangkat lunak yang tangguh, evaluasi deterministik, dan keamanan tipe data end-to-end.
+        </p>
+      </section>
+
+      {/* Engineering Philosophy */}
+      <section className="space-y-6">
+        <SectionHeader
+          badge="Prinsip"
+          title="Prinsip Rekayasa & Pengembangan"
+          description="Prinsip panduan yang diterapkan di seluruh repositori, arsitektur sistem, dan kontribusi open-source saya."
+          className="mb-6"
+        />
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <Card className="space-y-2">
+            <div className="flex items-center gap-2 text-sky-600 dark:text-sky-400 font-bold text-sm">
+              <Brain className="w-4 h-4" />
+              <h4>AI Berbasis Bukti Nyata (Evidence-Grounded AI)</h4>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Sistem AI harus dapat diaudit, diverifikasi, dan dijelaskan. Baik saat mengekstraksi graf properti di AutomatedGraph maupun menghitung peta panas Grad-CAM di OmniMed-Insight, setiap inferensi memerlukan sitasi bukti yang ketat.
+            </p>
+          </Card>
+
+          <Card className="space-y-2">
+            <div className="flex items-center gap-2 text-sky-600 dark:text-sky-400 font-bold text-sm">
+              <ShieldCheck className="w-4 h-4" />
+              <h4>Keamanan Memori & Waktu Kompilasi</h4>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Memprioritaskan jaminan keamanan saat kompilasi. Memanfaatkan Rust (Axum, Tokio) untuk gateway keamanan kritis dan TypeScript strict mode di seluruh lapisan frontend untuk mengeliminasi kesalahan runtime sebelum rilis produksi.
+            </p>
+          </Card>
+
+          <Card className="space-y-2">
+            <div className="flex items-center gap-2 text-sky-600 dark:text-sky-400 font-bold text-sm">
+              <Terminal className="w-4 h-4" />
+              <h4>Evaluasi Deterministik & LLMOps</h4>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Model machine learning dalam produksi membutuhkan validasi kualitas berkelanjutan yang ketat. Pipeline evaluasi otomatis dengan Ragas, TruLens, dan metrik Prometheus memastikan penekanan halusinasi serta konsistensi performa.
+            </p>
+          </Card>
+
+          <Card className="space-y-2">
+            <div className="flex items-center gap-2 text-sky-600 dark:text-sky-400 font-bold text-sm">
+              <Layers className="w-4 h-4" />
+              <h4>Pragmatisme Dunia Nyata</h4>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Sistem harus beroperasi secara andal di bawah batasan dunia nyata—seperti Ground Control Station luring (PMTiles) saat survei lapangan drone, fallback SQLite tertanam tanpa dependensi eksternal, dan isolasi data multi-tenant.
+            </p>
+          </Card>
+        </div>
+      </section>
+
+      {/* Verified Technical Focus Areas */}
+      <section className="space-y-6">
+        <SectionHeader
+          badge="Spesialisasi"
+          title="Fokus Teknis & Ranah Aktif"
+          description="Bidang riset terapan, rekayasa perangkat lunak, dan implementasi kode yang diverifikasi langsung dari repositori publik."
+          className="mb-6"
+        />
+
+        <div className="space-y-4">
+          <Card className="p-5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+              <h3 className="font-bold text-slate-900 dark:text-slate-100 text-base">
+                1. GraphRAG & Large Language Model Operations (LLMOps)
+              </h3>
+              <Badge variant="accent">AI / RAG</Badge>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Merekayasa pipeline chunking sadar-struktur, graf pengetahuan properti (NetworkX, SQLite), serta retrieval hibrida leksikal (BM25) dan vektor dens. Membangun pusat kontrol LLMOps dengan pelacakan eksperimen, staging model registry, dan skor halusinasi otomatis.
+            </p>
+            <div className="mt-3 flex items-center gap-2 text-xs font-mono text-slate-500">
+              <span>Terverifikasi di:</span>
+              <Link href="/projects/automatedgraph" className="text-sky-600 dark:text-sky-400 hover:underline">
+                AutomatedGraph
+              </Link>
+              <span>•</span>
+              <Link href="/projects/llmops-evaluasi-model-end-to-end" className="text-sky-600 dark:text-sky-400 hover:underline">
+                LLMOps Control Center
+              </Link>
+            </div>
+          </Card>
+
+          <Card className="p-5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+              <h3 className="font-bold text-slate-900 dark:text-slate-100 text-base">
+                2. Robotika Otonom & Edge Computing Udara
+              </h3>
+              <Badge variant="accent">Robotika</Badge>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Menghubungkan ROS 2 Jazzy dengan perpesanan micro-XRCE-DDS PX4 Autopilot, simulasi fisika 3D Gazebo Harmonic, penghindaran rintangan LiDAR dinamis 2D, dan perencanaan jalur A*. Mengintegrasikan fotogrametri edge untuk deteksi kematangan panen pertanian.
+            </p>
+            <div className="mt-3 flex items-center gap-2 text-xs font-mono text-slate-500">
+              <span>Terverifikasi di:</span>
+              <Link href="/projects/harvest_drone" className="text-sky-600 dark:text-sky-400 hover:underline">
+                Harvest_Drone
+              </Link>
+            </div>
+          </Card>
+
+          <Card className="p-5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+              <h3 className="font-bold text-slate-900 dark:text-slate-100 text-base">
+                3. Backend Kinerja Tinggi & AI yang Dapat Dijelaskan (XAI)
+              </h3>
+              <Badge variant="accent">Rust / XAI</Badge>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Merancang platform dual-runtime yang memadukan batas keamanan memori Rust (Axum, Tokio) dengan model deep learning visi PyTorch. Menghitung peta panas fitur Grad-CAM secara real-time dan mengekspor bundle klinis sesuai standar HL7 FHIR R4.
+            </p>
+            <div className="mt-3 flex items-center gap-2 text-xs font-mono text-slate-500">
+              <span>Terverifikasi di:</span>
+              <Link href="/projects/omnimed-insight" className="text-sky-600 dark:text-sky-400 hover:underline">
+                OmniMed-Insight
+              </Link>
+            </div>
+          </Card>
+
+          <Card className="p-5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+              <h3 className="font-bold text-slate-900 dark:text-slate-100 text-base">
+                4. Web Enterprise & Sistem Multi-Tenansi
+              </h3>
+              <Badge variant="accent">Full-Stack</Badge>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Membangun aplikasi multi-tenant di Next.js dengan Supabase PostgreSQL, kontrol akses berbasis peran (RBAC), sinkronisasi buku besar audit terenkripsi, serta clustering profil mahasiswa (K-Means).
+            </p>
+            <div className="mt-3 flex items-center gap-2 text-xs font-mono text-slate-500">
+              <span>Terverifikasi di:</span>
+              <Link href="/projects/medchain" className="text-sky-600 dark:text-sky-400 hover:underline">
+                Medchain
+              </Link>
+              <span>•</span>
+              <Link href="/projects/lms" className="text-sky-600 dark:text-sky-400 hover:underline">
+                LMS
+              </Link>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Call to action */}
+      <section className="p-8 rounded-2xl border border-slate-200/80 dark:border-white/[0.08] bg-slate-100/50 dark:bg-white/[0.02] flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <div>
+          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+            Tertarik untuk kolaborasi teknis?
+          </h3>
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+            Jelajahi implementasi kode sumber terbuka atau hubungi saya untuk diskusi rekayasa perangkat lunak.
+          </p>
+        </div>
+        <div className="flex items-center gap-3">
+          <Button href="/projects" variant="primary" size="md">
+            <span>Jelajahi Projek</span>
+            <ArrowRight className="w-4 h-4" />
+          </Button>
+          <Button href="/contact" variant="outline" size="md">
+            <span>Hubungi Saya</span>
+          </Button>
+        </div>
+      </section>
+    </div>
+  );
+}
