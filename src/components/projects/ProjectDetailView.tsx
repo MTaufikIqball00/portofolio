@@ -8,6 +8,7 @@ import {
   ArrowLeft,
   ArrowUpRight,
   Boxes,
+  Briefcase,
   CheckCircle2,
   ExternalLink,
   GitFork,
@@ -74,6 +75,12 @@ export function ProjectDetailView({ project }: ProjectDetailViewProps) {
             <Badge variant="accent" className="text-[11px] font-mono bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/30">
               <GraduationCap className="w-3.5 h-3.5 mr-1 inline" />
               <span>Tugas Akhir — Universitas Komputer Indonesia (IPK 3.39)</span>
+            </Badge>
+          )}
+          {project.slug === "lms" && (
+            <Badge variant="accent" className="text-[11px] font-mono bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/30">
+              <Briefcase className="w-3.5 h-3.5 mr-1 inline" />
+              <span>Kemendikbud Bandung — Full Stack Developer (2 Bulan)</span>
             </Badge>
           )}
         </div>

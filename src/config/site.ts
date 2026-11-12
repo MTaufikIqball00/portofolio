@@ -22,6 +22,19 @@ export const siteConfig = {
     description:
       "Pendidikan terakhir diselesaikan di Universitas Komputer Indonesia (UNIKOM) dengan Indeks Prestasi Kumulatif (IPK) 3.39. Mengembangkan sistem Tugas Akhir berupa wahana UAV otonom terpadu (Harvest_Drone) yang mengintegrasikan ROS 2 Jazzy, PX4 Autopilot, sensor LiDAR 2D, dan visualisasi stasiun kendali darat untuk pemantauan lahan pertanian.",
   },
+  experience: [
+    {
+      role: "Full Stack Developer",
+      company: "Kemendikbud Bandung",
+      companyFull: "Kementerian Pendidikan dan Kebudayaan — Bandung",
+      period: "2 Bulan",
+      project: "Learning Management System (LMS)",
+      projectSlug: "lms",
+      description:
+        "Bekerja sebagai Full Stack Developer selama 2 bulan di Kemendikbud Bandung, merancang dan mengembangkan platform Learning Management System (LMS) berskala enterprise. Bertanggung jawab atas pengembangan antarmuka web reaktif (Next.js/React), arsitektur basis data relasional (PostgreSQL/Supabase), implementasi sistem kontrol akses multi-tenant (RBAC & RLS), serta modul analitik clustering profil mahasiswa.",
+      skills: ["Next.js 15", "TypeScript", "PostgreSQL", "Supabase", "Tailwind CSS", "K-Means", "RBAC"],
+    },
+  ],
   nav: [
     { label: "Beranda", href: "/" },
     { label: "Tentang", href: "/about" },

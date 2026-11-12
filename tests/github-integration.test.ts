@@ -86,6 +86,7 @@ test("generatePersonJsonLd contains valid schema.org Person definition with educ
   assert.strictEqual(jsonLd.email, "taufikschll@gmail.com");
   assert.strictEqual(siteConfig.email, "taufikschll@gmail.com");
   assert.strictEqual(jsonLd.alumniOf?.name, "Universitas Komputer Indonesia");
+  assert.strictEqual(jsonLd.worksFor?.name, "Kemendikbud Bandung");
 });
 
 test("siteConfig and Harvest_Drone contain verified education credentials", () => {
@@ -105,6 +106,26 @@ test("siteConfig and Harvest_Drone contain verified education credentials", () =
   assert.ok(
     droneProject.highlights.some(
       (h) => h.includes("Universitas Komputer Indonesia") && h.includes("3.39")
+    )
+  );
+});
+
+test("siteConfig and LMS contain verified work experience credentials", () => {
+  const exp = siteConfig.experience[0];
+  assert.ok(exp);
+  assert.strictEqual(exp.role, "Full Stack Developer");
+  assert.strictEqual(exp.company, "Kemendikbud Bandung");
+  assert.strictEqual(exp.period, "2 Bulan");
+  assert.strictEqual(exp.projectSlug, "lms");
+
+  const lmsProject = VERIFIED_FALLBACK_PROJECTS.find((p) => p.slug === "lms");
+  assert.ok(lmsProject);
+  assert.ok(lmsProject.tagline.includes("Kemendikbud Bandung"));
+  assert.ok(lmsProject.tagline.includes("Full Stack Developer"));
+  assert.ok(lmsProject.tagline.includes("2 Bulan"));
+  assert.ok(
+    lmsProject.highlights.some(
+      (h) => h.includes("Kemendikbud Bandung") && h.includes("Full Stack Developer")
     )
   );
 });

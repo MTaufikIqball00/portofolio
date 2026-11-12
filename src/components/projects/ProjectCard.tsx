@@ -44,6 +44,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 <span>Tugas Akhir UNIKOM</span>
               </Badge>
             )}
+            {project.slug === "lms" && (
+              <Badge variant="accent" className="text-[10px] py-0.5 px-2 font-mono">
+                <span>Kemendikbud Bandung</span>
+              </Badge>
+            )}
           </div>
           <div className="flex items-center gap-1.5 text-xs font-mono text-slate-600 dark:text-slate-400">
             <span

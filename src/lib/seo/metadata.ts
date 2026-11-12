@@ -80,5 +80,10 @@ export function generatePersonJsonLd() {
       name: siteConfig.education.institution,
       alternateName: siteConfig.education.institutionShort,
     },
+    worksFor: {
+      "@type": "Organization",
+      name: siteConfig.experience[0].company,
+      alternateName: siteConfig.experience[0].companyFull,
+    },
   };
 }

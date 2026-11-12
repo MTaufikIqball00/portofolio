@@ -512,10 +512,11 @@ export const VERIFIED_FALLBACK_PROJECTS: Project[] = [
   {
     slug: "lms",
     name: "LMS",
-    displayName: "LMS",
-    tagline: "Learning Management System Enterprise dengan Profiling Mahasiswa (K-Means) & Multi-Tenansi",
+    displayName: "LMS (Kemendikbud Bandung)",
+    tagline:
+      "Pengalaman Kerja di Kemendikbud Bandung (Full Stack Developer, 2 Bulan) — LMS Enterprise dengan Profiling Mahasiswa (K-Means) & Multi-Tenansi",
     description:
-      "Platform Learning Management System tingkat enterprise yang dibangun dengan Next.js 15, PostgreSQL, dan Supabase. Dilengkapi sistem peringatan dini berbasis clustering K-Means untuk memetakan keterlibatan mahasiswa, arsitektur multi-tenant, dan kuis interaktif.",
+      "Platform Learning Management System tingkat enterprise yang dikembangkan selama masa kerja 2 bulan sebagai Full Stack Developer di Kemendikbud Bandung. Dibangun menggunakan Next.js 15, PostgreSQL, dan Supabase dengan sistem peringatan dini berbasis clustering K-Means untuk memetakan keterlibatan mahasiswa, arsitektur multi-tenant, dan kuis interaktif.",
     htmlUrl: "https://github.com/MTaufikIqball00/LMS",
     homepageUrl: null,
     language: "TypeScript",
@@ -584,6 +585,7 @@ export const VERIFIED_FALLBACK_PROJECTS: Project[] = [
       "Scikit-Learn (K-Means)",
     ],
     highlights: [
+      "Projek dikembangkan selama masa kerja 2 bulan sebagai Full Stack Developer di Kemendikbud Bandung",
       "Clustering K-Means otomatis untuk mendeteksi mahasiswa yang membutuhkan intervensi akademik",
       "Keamanan Row Level Security (RLS) PostgreSQL untuk isolasi hak akses data",
       "Dukungan multi-peran dengan navigasi responsif dan ramah perangkat bergerak",

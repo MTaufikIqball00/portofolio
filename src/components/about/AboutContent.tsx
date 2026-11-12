@@ -7,6 +7,8 @@ import {
   ArrowRight,
   Award,
   Brain,
+  Briefcase,
+  Calendar,
   FileText,
   GraduationCap,
   Layers,
@@ -45,8 +47,13 @@ export function AboutContent() {
             </p>
             <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
               <span className="flex items-center gap-1.5 font-mono text-slate-700 dark:text-slate-300">
-                <GraduationCap className="w-4 h-4 text-sky-500" />
-                <span>{siteConfig.education.institution} (IPK {siteConfig.education.gpa})</span>
+                <Briefcase className="w-3.5 h-3.5 text-sky-500" />
+                <span>Eks Full Stack Developer • Kemendikbud Bandung</span>
+              </span>
+              <span>•</span>
+              <span className="flex items-center gap-1.5 font-mono text-slate-700 dark:text-slate-300">
+                <GraduationCap className="w-3.5 h-3.5 text-sky-500" />
+                <span>{siteConfig.education.institutionShort} (IPK {siteConfig.education.gpa})</span>
               </span>
               <span>•</span>
               <span>
@@ -138,6 +145,87 @@ export function AboutContent() {
             </div>
           </div>
         </Card>
+      </section>
+
+      {/* Professional Experience */}
+      <section className="space-y-6">
+        <SectionHeader
+          badge="Karier"
+          title="Pengalaman Kerja & Profesional"
+          description="Rekam jejak kontribusi rekayasa perangkat lunak pada instansi pemerintah dalam pengembangan sistem berskala enterprise."
+          className="mb-6"
+        />
+
+        <div className="space-y-4">
+          {siteConfig.experience.map((exp, idx) => (
+            <Card
+              key={idx}
+              className="p-6 sm:p-8 border-sky-500/20 bg-gradient-to-br from-slate-900/[0.02] to-sky-500/[0.02] dark:from-white/[0.02] dark:to-sky-500/[0.03] space-y-6"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200/80 dark:border-white/[0.08]">
+                <div className="flex items-start sm:items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center flex-shrink-0">
+                    <Briefcase className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+                        {exp.role}
+                      </h3>
+                      <Badge variant="accent">{exp.company}</Badge>
+                    </div>
+                    <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-mono mt-0.5">
+                      {exp.companyFull}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-1.5 self-start sm:self-auto px-3.5 py-1.5 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-600 dark:text-sky-400 font-mono text-xs sm:text-sm font-semibold">
+                  <Calendar className="w-4 h-4" />
+                  <span>Durasi: {exp.period}</span>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="space-y-1">
+                  <span className="text-xs font-mono font-semibold uppercase tracking-wider text-sky-600 dark:text-sky-400">
+                    Projek Utama yang Dikembangkan
+                  </span>
+                  <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100">
+                    {exp.project}
+                  </h4>
+                </div>
+
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  {exp.description}
+                </p>
+
+                <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <div className="flex flex-wrap gap-2 text-xs font-mono text-slate-600 dark:text-slate-400">
+                    {exp.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/[0.05] border border-slate-200 dark:border-white/10"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+
+                  <Button
+                    href={`/projects/${exp.projectSlug}`}
+                    variant="outline"
+                    size="sm"
+                    className="text-xs whitespace-nowrap"
+                  >
+                    <span>Lihat Implementasi (LMS)</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Button>
+                </div>
+              </div>
+            </Card>
+          ))}
+        </div>
       </section>
 
       {/* Engineering Philosophy */}

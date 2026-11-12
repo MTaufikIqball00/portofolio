@@ -34,12 +34,12 @@ const PILLARS = [
   },
   {
     icon: Layers,
-    title: "Full-Stack & Arsitektur Medis",
+    title: "Full-Stack Enterprise & LMS",
     description:
-      "Merancang sistem enterprise multi-tenant berbasis Next.js dengan Supabase PostgreSQL, kepatuhan regulasi klinis HL7 FHIR R4, dan audit keamanan sistem.",
+      "Pengalaman sebagai Full Stack Developer di Kemendikbud Bandung (projek LMS) serta rekayasa sistem enterprise berbasis Next.js, Supabase PostgreSQL, kepatuhan regulasi HL7 FHIR R4, dan clustering K-Means.",
     verifiedProjects: [
-      { name: "Medchain", slug: "medchain" },
       { name: "LMS", slug: "lms" },
+      { name: "Medchain", slug: "medchain" },
     ],
   },
 ];
