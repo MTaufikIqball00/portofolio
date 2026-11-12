@@ -83,7 +83,8 @@ test("generatePersonJsonLd contains valid schema.org Person definition with educ
   assert.strictEqual(jsonLd["@type"], "Person");
   assert.strictEqual(jsonLd.name, siteConfig.fullName);
   assert.strictEqual(jsonLd.url, siteConfig.url);
-  assert.ok(jsonLd.sameAs.includes(siteConfig.githubUrl));
+  assert.strictEqual(jsonLd.email, "taufikschll@gmail.com");
+  assert.strictEqual(siteConfig.email, "taufikschll@gmail.com");
   assert.strictEqual(jsonLd.alumniOf?.name, "Universitas Komputer Indonesia");
 });
 

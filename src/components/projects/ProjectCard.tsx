@@ -92,7 +92,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       {/* Card Footer: Stars, Forks, Last Updated, and Actions */}
-      <div className="pt-5 mt-4 border-t border-slate-100 dark:border-white/[0.06] flex items-center justify-between gap-3 text-xs">
+      <div className="pt-5 mt-4 border-t border-slate-100 dark:border-white/[0.06] flex flex-wrap items-center justify-between gap-2.5 text-xs">
         <div className="flex items-center gap-3 text-slate-600 dark:text-slate-400 font-mono">
           <span className="flex items-center gap-1" title="Bintang">
             <Star className="w-3.5 h-3.5 text-amber-500" />
@@ -107,7 +107,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </span>
         </div>
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1.5 flex-wrap">
           {project.homepageUrl && (
             <Button
               href={project.homepageUrl}

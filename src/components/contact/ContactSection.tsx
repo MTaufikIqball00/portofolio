@@ -10,6 +10,7 @@ import {
   Check,
   CheckCircle2,
   Copy,
+  Mail,
   MessageSquare,
   Send,
 } from "lucide-react";
@@ -17,6 +18,7 @@ import React, { useState } from "react";
 
 export function ContactSection() {
   const [copied, setCopied] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -30,6 +32,12 @@ export function ContactSection() {
     navigator.clipboard.writeText(siteConfig.githubUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
+  };
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(siteConfig.email);
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2500);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -111,6 +119,57 @@ export function ContactSection() {
                   <>
                     <Copy className="w-3.5 h-3.5" />
                     <span>Salin Tautan Profil</span>
+                  </>
+                )}
+              </button>
+            </div>
+          </Card>
+
+          {/* Direct Email Card */}
+          <Card className="space-y-4 border-slate-200/90 dark:border-white/[0.08]">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-lg bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center">
+                <Mail className="w-4 h-4" />
+              </div>
+              <div>
+                <h4 className="text-xs font-mono font-bold text-slate-900 dark:text-slate-100">
+                  Email Langsung
+                </h4>
+                <p className="text-[11px] text-slate-500 font-mono">{siteConfig.email}</p>
+              </div>
+            </div>
+
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              Kirim korespondensi, undangan wawancara teknis, atau proposal kolaborasi via email:
+            </p>
+
+            <div className="space-y-2">
+              <Button
+                href={`mailto:${siteConfig.email}`}
+                external
+                variant="outline"
+                size="sm"
+                className="w-full text-xs"
+              >
+                <Mail className="w-3.5 h-3.5" />
+                <span>Kirim Email</span>
+                <ArrowUpRight className="w-3.5 h-3.5 opacity-70" />
+              </Button>
+
+              <button
+                type="button"
+                onClick={handleCopyEmail}
+                className="w-full py-1.5 px-3 rounded-lg border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 text-xs font-mono text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center justify-center gap-1.5 transition-colors"
+              >
+                {copiedEmail ? (
+                  <>
+                    <Check className="w-3.5 h-3.5 text-emerald-500" />
+                    <span>Email Tersalin!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3.5 h-3.5" />
+                    <span>Salin Alamat Email</span>
                   </>
                 )}
               </button>

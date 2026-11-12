@@ -74,6 +74,7 @@ export function generatePersonJsonLd() {
     sameAs: [siteConfig.githubUrl],
     jobTitle: siteConfig.positioning,
     description: siteConfig.heroSubtext,
+    email: siteConfig.email,
     alumniOf: {
       "@type": "EducationalOrganization",
       name: siteConfig.education.institution,

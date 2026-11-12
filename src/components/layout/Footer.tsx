@@ -1,6 +1,6 @@
 import { siteConfig } from "@/config/site";
 import { Github } from "@/components/ui/GithubIcon";
-import { ArrowUpRight } from "lucide-react";
+import { Mail } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -10,9 +10,9 @@ export function Footer() {
   return (
     <footer className="w-full border-t border-slate-200/80 dark:border-white/[0.08] bg-slate-50/50 dark:bg-[#07090e]/50 py-12 transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           {/* Identity column */}
-          <div className="md:col-span-2 space-y-3">
+          <div className="sm:col-span-2 space-y-3">
             <div className="flex items-center gap-2">
               <span className="w-6 h-6 rounded bg-slate-900 text-white dark:bg-white dark:text-slate-950 flex items-center justify-center font-mono font-bold text-[10px]">
                 MT
@@ -24,17 +24,27 @@ export function Footer() {
             <p className="text-xs text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed">
               {siteConfig.positioning}. Merekayasa arsitektur perangkat lunak yang tangguh pada ranah AI, robotika, dan sistem terdistribusi.
             </p>
-            <div className="pt-2 flex items-center gap-3">
+
+            {/* Social & Contact Icons (Hanya Ikon) */}
+            <div className="pt-2 flex items-center gap-2.5">
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="w-9 h-9 rounded-lg border border-slate-300 dark:border-white/10 hover:border-sky-500 dark:hover:border-sky-400 bg-white/70 dark:bg-white/[0.03] text-slate-700 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 flex items-center justify-center transition-all hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+                title={`Kirim Email (${siteConfig.email})`}
+                aria-label={`Kirim Email ke ${siteConfig.email}`}
+              >
+                <Mail className="w-4 h-4" />
+              </a>
+
               <a
                 href={siteConfig.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-600 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
-                aria-label="Profil GitHub"
+                className="w-9 h-9 rounded-lg border border-slate-300 dark:border-white/10 hover:border-sky-500 dark:hover:border-sky-400 bg-white/70 dark:bg-white/[0.03] text-slate-700 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 flex items-center justify-center transition-all hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+                title={`Profil GitHub (@${siteConfig.githubUsername})`}
+                aria-label={`Profil GitHub @${siteConfig.githubUsername}`}
               >
-                <Github className="w-3.5 h-3.5" />
-                <span>github.com/{siteConfig.githubUsername}</span>
-                <ArrowUpRight className="w-3 h-3 opacity-70" />
+                <Github className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -73,7 +83,7 @@ export function Footer() {
         </div>
 
         {/* Bottom copyright line */}
-        <div className="pt-8 border-t border-slate-200/60 dark:border-white/[0.06] flex flex-col sm:flex-row items-center justify-between text-xs text-slate-600 dark:text-slate-400 gap-4">
+        <div className="pt-8 border-t border-slate-200/60 dark:border-white/[0.06] flex flex-col sm:flex-row items-center justify-between text-xs text-slate-600 dark:text-slate-400 gap-4 text-center sm:text-left">
           <p>© {currentYear} {siteConfig.fullName}. Seluruh hak cipta dilindungi.</p>
           <p className="font-mono text-[11px] text-slate-600 dark:text-slate-400">
             Next.js App Router • TypeScript Strict • Tailwind CSS

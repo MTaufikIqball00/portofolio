@@ -100,14 +100,14 @@ export function ProjectDetailView({ project }: ProjectDetailViewProps) {
             <span>Terakhir diperbarui {formatDate(project.updatedAt)}</span>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap w-full sm:w-auto">
             {project.homepageUrl && (
-              <Button href={project.homepageUrl} external variant="outline" size="sm">
+              <Button href={project.homepageUrl} external variant="outline" size="sm" className="w-full sm:w-auto">
                 <ExternalLink className="w-4 h-4" />
                 <span>Demo Langsung</span>
               </Button>
             )}
-            <Button href={project.htmlUrl} external variant="primary" size="sm">
+            <Button href={project.htmlUrl} external variant="primary" size="sm" className="w-full sm:w-auto">
               <Github className="w-4 h-4" />
               <span>Lihat Kode di GitHub</span>
               <ArrowUpRight className="w-3.5 h-3.5 opacity-70" />

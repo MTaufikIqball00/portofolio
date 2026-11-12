@@ -10,6 +10,7 @@ export const siteConfig = {
   githubUrl: "https://github.com/MTaufikIqball00",
   avatarUrl: "https://avatars.githubusercontent.com/u/110665394?v=4",
   hireable: true,
+  email: "taufikschll@gmail.com",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://taufik-portfolio.vercel.app",
   education: {
     institution: "Universitas Komputer Indonesia",
